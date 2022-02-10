@@ -1,9 +1,11 @@
 package m2cci.zw;
 
+
+
 public class Courrier {
-    private int poids;
-    private boolean modeExpedition ;
-    private String adresse ;
+    protected int poids;
+    public ModeExped modeExpedition ;
+    protected String adresse ;
 
     private double prix ;
 /**
@@ -12,7 +14,7 @@ public class Courrier {
  * @param modeExpedition si true expidition rapide si non expidition normal
  * @param adresse l'addreese ou il faut envoyer le courrier 
  */
-    public Courrier(int poids, boolean modeExpedition, String adresse) {
+    public Courrier(int poids, ModeExped modeExpedition, String adresse) {
         this.poids = poids;
         this.modeExpedition = modeExpedition;
         this.adresse = adresse;
@@ -27,7 +29,7 @@ public class Courrier {
     }
    /**
     * 
-    * @return retourner si l'addresse deferent de la séquence vide 
+    * @return retourner vrai si l'adresse est valide (adress non vide ) 
     */ 
     public boolean estValide(){
         return adresse.length() > 0 ;
@@ -39,7 +41,7 @@ public class Courrier {
 
         }
         else{
-            if(modeExpedition){
+            if(modeExpedition==ModeExped.express){
                 prix=prix*2 ;
 
             }
