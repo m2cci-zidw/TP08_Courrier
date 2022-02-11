@@ -22,5 +22,7 @@ public class App
         // m1.deposeCourrier(Lettre2);
          m1.SommeAffranchir();
         // m1.CourrierInvalide();
+
+        System.out.println(colis1.estValide());
     }
 }
