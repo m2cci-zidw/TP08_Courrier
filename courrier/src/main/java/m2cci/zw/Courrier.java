@@ -36,16 +36,14 @@ public class Courrier {
     }
     public double Affranchir(){
           prix = AffranchirNormale() ;
-        if(adresse.length() ==0){
-            return 0;
-
-        }
-        else{
+        if(estValide()){
             if(modeExpedition==ModeExped.express){
                 prix=prix*2 ;
 
             }
             return prix;
+        }else{
+            return 0;
         }
 
     }
