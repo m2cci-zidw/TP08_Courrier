@@ -16,5 +16,8 @@ public double AffranchirNormale(){
 
  
 }
+public boolean estValide(){
+    return (super.estValide()&& volume<=50) ;
+}
     
 }
