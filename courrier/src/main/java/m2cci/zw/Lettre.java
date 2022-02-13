@@ -12,7 +12,7 @@ public class Lettre extends Courrier {
      * @param adresse        l'adresse de destination du courrier
      * @param format         le format d'une lettre soit A3 soit A4
      */
-    public Lettre(int poids, ModeExped modeExpedition, String adresse, Format format) {
+    public Lettre(Double poids, ModeExped modeExpedition, String adresse, Format format) {
         super(poids, modeExpedition, adresse);
         this.format = format;
     }
@@ -42,7 +42,7 @@ public class Lettre extends Courrier {
     public String toString() {
         String message = "Lettre\n";
         message = message + super.toString();
-        message = message + " Format : " + format + "\n";
+        message = message + "       Format : " + format + "\n";
         return message;
     }
 

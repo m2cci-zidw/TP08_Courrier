@@ -48,13 +48,14 @@ public class MachineAffranchir {
      * 
      * @return retourne la somme des prix de tous les courriers qui sont valides
      */
-    public double SommeAffranchir() {
+    public double sommeAffranchir() {
         double somme = 0.0;
-        for (int i = 0; i < listeCourriers.length; i++) {
+        for (int i = 0; i <index; i++) {
 
             somme = somme + listeCourriers[i].Affranchir();
 
         }
+        
         return somme;
     }
 
@@ -63,12 +64,11 @@ public class MachineAffranchir {
      * 
      * @return retourne le nombre de courier qui ne sont pas valides
      */
-    public int CourrierInvalide() {
+    public int courrierInvalides() {
         int nbCourrierInvalide = 0;
-        for (int i = 0; i < listeCourriers.length; i++) {
-            if (listeCourriers[i].estValide()) {
+        for (int i = 0; i < index; i++) {
+            if (!listeCourriers[i].estValide()) {
                 nbCourrierInvalide++;
-
             }
         }
         return nbCourrierInvalide;
@@ -80,7 +80,7 @@ public class MachineAffranchir {
      */
     public void afficher() {
         for (int i = 0; i < index; i++) {
-            System.out.println(listeCourriers[i]);
+            System.out.println( listeCourriers[i]);
         }
     }
 

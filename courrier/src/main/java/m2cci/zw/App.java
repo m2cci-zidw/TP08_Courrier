@@ -1,62 +1,35 @@
 package m2cci.zw;
 
-/**
- * Hello world!
- *
- */
 public class App {
     public static void main(String[] args) {
-        Lettre Lettre1 = new Lettre(1000, ModeExped.express, "azze", Format.A3);
 
-        // System.out.println(Lettre1.Affranchir());
-        Lettre Lettre2 = new Lettre(1000, ModeExped.normal, "", Format.A3);
-        // System.out.println(Lettre2.Affranchir());
+        MachineAffranchir machine = new MachineAffranchir(50);
 
-        // System.out.println(Lettre1);
-        // System.out.println(Lettre2);
+        Lettre l1 = new Lettre(200.0, ModeExped.express, "Chemin des Acacias 28, 1009 Pully", Format.A3);
 
-        Publicite pub1 = new Publicite(10, ModeExped.express, "grenoble");
-        colis colis2 = new colis(1000, ModeExped.express, "", 10);
+        Lettre l2 = new Lettre(800.0, ModeExped.normal, "", Format.A4);
 
-        // System.out.println(Lettre2.estValide());clear
-        colis colis1 = new colis(100000, ModeExped.express, "qssss", 10);
-        // System.out.println(colis1.estValide());
-        // System.out.println(colis1);
-        // System.out.println(pub1);
+        Publicite p1 = new Publicite(1500.0, ModeExped.express, "Les Moilles 13A , 1913 Saillon");
 
-        // System.out.println(colis1.estValide());
-        MachineAffranchir m1 = new MachineAffranchir(10);
+        Publicite p2 = new Publicite(3000.0, ModeExped.normal, "");
 
+        Colis c1 = new Colis(5000.0, ModeExped.express, "Grand rue 18, 1950 Sion", 30.0);
 
-        m1.deposeCourrier(Lettre1);
-        m1.deposeCourrier(Lettre2);
-        m1.deposeCourrier(colis1);
-        m1.deposeCourrier(colis2);
-        m1.afficher();
+        Colis c2 = new Colis(3000.0, ModeExped.express, "Chemin des fleurs 48,2800 Delemont", 70.0);
 
-       /* Machine machine = newMachine();
+        machine.deposeCourrier(l1);
+        machine.deposeCourrier(l2);
+        machine.deposeCourrier(c1);
+        machine.deposeCourrier(c2);
+        machine.deposeCourrier(p1);
+        machine.deposeCourrier(p2);
 
-        Lettre l1 = new Lettre(200, ModeExped.express, "Chemin des Acacias 28, 1009 Pully", A3);
-
-        Lettre l2 = new Lettre(800, ModeExped.normal, "", A4);
-
-        Publicite p1 = new Publicite(1500, ModeExped.express, "Les Moilles 13A,1913 Saillon");
-
-        Publicite p2 = new Publicite(3000, ModeExped.normal, "");
-
-        Colis c1 = new Colis(5000, ModeExped.express, "Grand rue 18, 1950 Sion", 30);
-
-        Colis c2 = new Colis(5000, ModeExped.express, "Chemin des fleurs 48,2800 Delemont", 70);
-
-        machine.deposerCourrier(l1);
-        machine.deposerCourrier(l2);
-        machine.deposerCourrier(c1);
-        machine.deposerCourrier(c2);
-        machine.deposerCourrier(p1);
-        machine.deposerCourrier(p2);
-
-        machine.affranchir();
+        System.out.println("Le montant total d'affranchissement est de " + machine.sommeAffranchir() + " euros.");
+        System.out.println("");
         machine.afficher();
-        machine.courrierInvalides();*/
+        System.out.println("La boite contient " + machine.courrierInvalides() + " courriers invalides.");
+        System.out.println();
+
     }
+
 }

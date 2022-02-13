@@ -1,7 +1,7 @@
 package m2cci.zw;
 
 public class Courrier {
-    protected int poids;
+    protected double poids;
     public ModeExped modeExpedition;
     protected String adresse;
 
@@ -14,7 +14,7 @@ public class Courrier {
      * @param modeExpedition si true expédition rapide sinon expédition normale
      * @param adresse        l'adresse de destination d'un courrier
      */
-    public Courrier(int poids, ModeExped modeExpedition, String adresse) {
+    public Courrier(double poids, ModeExped modeExpedition, String adresse) {
         this.poids = poids;
         this.modeExpedition = modeExpedition;
         this.adresse = adresse;
@@ -66,7 +66,7 @@ public class Courrier {
      * 
      * @return poids renvoi le poids du colis
      */
-    public int getPoids() {
+    public double getPoids() {
         return poids;
     }
 
@@ -79,13 +79,13 @@ public class Courrier {
     public String toString() {
         String message = "";
         if (!estValide()) {
-            message = message + " Courrier invalide \n";
+            message = message + "(Courrier invalide)\n";
 
         }
-        message = message + " Poids : " + getPoids() + " grammes \n";
-        message = message + " Express : " + ((modeExpedition == modeExpedition.express) ? "oui" : "non") + " \n";
-        message = message + " Destination : " + adresse + "\n";
-        message = message + " Prix : " + Affranchir() + " Euro \n";
+        message = message + "       Poids : " + getPoids() + " grammes \n";
+        message = message + "       Express : " + ((modeExpedition == ModeExped.express) ? "oui" : "non") + " \n";
+        message = message + "       Destination : " + this.adresse + "\n";
+        message = message +  (estValide()? ("       Prix : " + Affranchir() + " Euro \n") : "");
         return message;
 
     }

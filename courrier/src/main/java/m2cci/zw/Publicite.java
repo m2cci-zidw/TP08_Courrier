@@ -10,9 +10,11 @@ public class Publicite extends Courrier {
      * @param modeExpedition si true expédition express sinon expédition normale
      * @param adresse        l'adresse de destination du courrier
      */
-    public Publicite(int poids, ModeExped modeExpedition, String adresse) {
+    public Publicite(double poids, ModeExped modeExpedition, String adresse) {
         super(poids, modeExpedition, adresse);
     }
+
+
 
     /**
      * Calcule le tarif d'affranchichissement normal d'une publicité
@@ -20,7 +22,7 @@ public class Publicite extends Courrier {
      * @return montant le montant d'affranchissement d'une publicité
      */
     public double AffranchirNormale() {
-        montant = getPoids() / 1000 * 5.0;
+        montant = (getPoids() / 1000) * 5.0;
         return montant;
     }
 

@@ -1,7 +1,7 @@
 package m2cci.zw;
 
-public class colis extends Courrier {
-    private int volume;
+public class Colis extends Courrier {
+    private double volume;
     private double montant;
 
     /**
@@ -12,7 +12,7 @@ public class colis extends Courrier {
      * @param adresse        l'adresse de destination d'un colis
      * @param volume         le volume d'un colis en littre
      */
-    public colis(int poids, ModeExped modeExpedition, String adresse, int volume) {
+    public Colis(double poids, ModeExped modeExpedition, String adresse, double volume) {
         super(poids, modeExpedition, adresse);
         this.volume = volume;
     }
@@ -48,7 +48,7 @@ public class colis extends Courrier {
     public String toString() {
         String message = "Colis \n";
         message = message + super.toString();
-        message = message + " Volume : " + volume + " litres\n";
+        message = message + "       Volume : " + volume + " litres\n";
         return message;
     }
 
