@@ -21,7 +21,7 @@ public class App
         colis colis2 = new colis(1000, ModeExped.express, "", 10);
 
         // System.out.println(Lettre2.estValide());clear
-         colis colis1 = new colis(1000, ModeExped.express, "qssss", 10);
+         colis colis1 = new colis(100000, ModeExped.express, "qssss", 10);
         // System.out.println(colis1.estValide());
        // System.out.println(colis1);
        // System.out.println(pub1);
