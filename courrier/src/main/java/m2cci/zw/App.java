@@ -27,13 +27,14 @@ public class App {
         // System.out.println(colis1.estValide());
         MachineAffranchir m1 = new MachineAffranchir(10);
 
+
         m1.deposeCourrier(Lettre1);
         m1.deposeCourrier(Lettre2);
         m1.deposeCourrier(colis1);
         m1.deposeCourrier(colis2);
         m1.afficher();
 
-        Machine machine = newMachine();
+       /* Machine machine = newMachine();
 
         Lettre l1 = new Lettre(200, ModeExped.express, "Chemin des Acacias 28, 1009 Pully", A3);
 
@@ -56,7 +57,6 @@ public class App {
 
         machine.affranchir();
         machine.afficher();
-        machine.courrierInvalides();
-
+        machine.courrierInvalides();*/
     }
 }
