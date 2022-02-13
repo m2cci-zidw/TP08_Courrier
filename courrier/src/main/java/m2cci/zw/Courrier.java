@@ -56,9 +56,20 @@ public class Courrier {
     public int getPoids() {
         return poids;
     }
+    @Override
+    public String toString() {
+        String message ="";
+        if(!estValide()){
+            message =message + " Courrier invalide \n";
 
+        }
+        message =message + " Poids : "+ getPoids() + " grammes \n";
+        message =message + " Express : "+ ((modeExpedition == modeExpedition.express)?  "oui" : "non" ) + " \n";
+        message =message + " Destination : "+ adresse + "\n" ;
+        message =message + " Prix : "+ Affranchir() + " Euro \n";
+        return message ;
     
-    
-    
-    
+    }
+
+
 }

@@ -24,5 +24,16 @@ public class Lettre extends Courrier {
         
 
     }
+
+
+    @Override
+    public String toString() {
+        String message = "Lettre\n";
+        message = message + super.toString();
+        message = message + " Format : " + format + "\n";
+        return message;
+    }
+
+    
     
 }

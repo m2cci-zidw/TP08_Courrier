@@ -10,7 +10,7 @@ public class colis extends Courrier {
     }
 public double AffranchirNormale(){
 
-    montant=0.25 * volume + getPoids()*1.0;
+    montant=0.25 * volume + getPoids()/1000.0;
 
     return montant;
 
@@ -18,6 +18,15 @@ public double AffranchirNormale(){
 }
 public boolean estValide(){
     return (super.estValide()&& volume<=50) ;
+}
+
+   
+@Override
+public String toString() {
+    String message = "Colis \n";
+    message = message + super.toString();
+    message  = message + " Volume : " + volume + " litres\n";
+    return message;
 }
     
 }

@@ -11,6 +11,27 @@ public class MachineAffranchir {
         this.index = 0;
     }
 
+    
+
+// public Courrier[] getListeCourriers() {
+//         return listeCourriers;
+//     }
+
+
+
+  
+
+
+    // public int getIndex() {
+    //     return index;
+    // }
+
+
+
+  
+
+
+
 /**
  * 
  * @param courrierAAjouter permet de rajouter une courrier à la liste des courriers
@@ -18,24 +39,30 @@ public class MachineAffranchir {
  */
     public void  deposeCourrier(Courrier courrierAAjouter){
         
-        if(index < listeCourriers.length){
+         if(index < listeCourriers.length){
             listeCourriers[index]=courrierAAjouter;
             index=index+1 ;
-            
-
+        }
+        else {
+            System.out.println("Impossible d'ajouter un nouveau courrier. Boite pleine !");
         }
     
     }
+ 
+
+
+
+
 /**
  * 
  * @return retourner la somme de prix de toute les courriers qui sont valide 
  */
     public double SommeAffranchir(){
-        double somme =0 ;
+        double somme =0.0 ;
         for(int i = 0; i< listeCourriers.length; i++){
-            if(listeCourriers[i].estValide()){
-                somme=  (somme+listeCourriers[i].Affranchir());
-            }
+            
+                somme=  somme+listeCourriers[i].Affranchir();
+            
         }
         return somme ;
     }
@@ -53,4 +80,15 @@ public class MachineAffranchir {
         }
         return nbCourrierInvalide;
     }
+
+
+  
+    
+    public void afficher() {
+        for (int i = 0; i < index; i++) {
+            System.out.println(listeCourriers[i]);
+        }
+    }
+    
 }
+
