@@ -2,93 +2,86 @@ package m2cci.zw;
 
 public class MachineAffranchir {
 
-    public Courrier [] listeCourriers ;
+    public Courrier[] listeCourriers;
     public int index;
 
-    
-    public MachineAffranchir(int longeurMax) {
-        this.listeCourriers = new Courrier[ longeurMax];
+    /**
+     * Constructeur de MachineAffranchir
+     * 
+     * @param longueurMax le contenu maximum de courrier pouvant être déposés dans
+     *                    la machine
+     */
+    public MachineAffranchir(int longueurMax) {
+        this.listeCourriers = new Courrier[longueurMax];
         this.index = 0;
     }
 
-    
-
-// public Courrier[] getListeCourriers() {
-//         return listeCourriers;
-//     }
-
-
-
-  
-
-
-    // public int getIndex() {
-    //     return index;
+    // public Courrier[] getListeCourriers() {
+    // return listeCourriers;
     // }
 
+    // public int getIndex() {
+    // return index;
+    // }
 
+    /**
+     * Permet de deposer un courrier dans la machine à affranchir
+     * 
+     * @param courrierAAjouter permet de rajouter une courrier à la liste des
+     *                         courriers si on a encore de la place (index<
+     *                         listeCourrier.lingth)
+     */
+    public void deposeCourrier(Courrier courrierAAjouter) {
 
-  
-
-
-
-/**
- * 
- * @param courrierAAjouter permet de rajouter une courrier à la liste des courriers
- * si on a encore de la place (index< listeCourrier.lingth)
- */
-    public void  deposeCourrier(Courrier courrierAAjouter){
-        
-         if(index < listeCourriers.length){
-            listeCourriers[index]=courrierAAjouter;
-            index=index+1 ;
-        }
-        else {
+        if (index < listeCourriers.length) {
+            listeCourriers[index] = courrierAAjouter;
+            index = index + 1;
+        } else {
             System.out.println("Impossible d'ajouter un nouveau courrier. Boite pleine !");
         }
-    
+
     }
- 
 
-
-
-
-/**
- * 
- * @return retourner la somme de prix de toute les courriers qui sont valide 
- */
-    public double SommeAffranchir(){
-        double somme =0.0 ;
-        for(int i = 0; i< listeCourriers.length; i++){
-            
-                somme=  somme+listeCourriers[i].Affranchir();
-            
-        }
-        return somme ;
-    }
     /**
+     * Fait la somme des affranchissement des differents courriers déposés dans la
+     * machine
      * 
-     * @return retourner le nombre de courier qui ne sont pas valide 
+     * @return retourne la somme des prix de tous les courriers qui sont valides
      */
-    public int CourrierInvalide(){
-        int nbCourrierInvalide =0;
-        for(int i=0; i<listeCourriers.length; i++){
-            if(listeCourriers[i].estValide()){
-                nbCourrierInvalide++ ;
+    public double SommeAffranchir() {
+        double somme = 0.0;
+        for (int i = 0; i < listeCourriers.length; i++) {
+
+            somme = somme + listeCourriers[i].Affranchir();
+
+        }
+        return somme;
+    }
+
+    /**
+     * Calcule et retourne le nombre de courriers invalides présents dans la machine
+     * 
+     * @return retourne le nombre de courier qui ne sont pas valides
+     */
+    public int CourrierInvalide() {
+        int nbCourrierInvalide = 0;
+        for (int i = 0; i < listeCourriers.length; i++) {
+            if (listeCourriers[i].estValide()) {
+                nbCourrierInvalide++;
 
             }
         }
         return nbCourrierInvalide;
     }
 
-
-  
-    
+    /**
+     * Affiche le contenu (c'est-à-dire les caractérisitiques des différents
+     * courriers présents) de la machine à affranchir sur la console
+     */
     public void afficher() {
         for (int i = 0; i < index; i++) {
             System.out.println(listeCourriers[i]);
         }
     }
-    
-}
 
+}
