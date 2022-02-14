@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"m2cci.zw","l":"App"},{"p":"m2cci.zw","l":"Colis"},{"p":"m2cci.zw","l":"Courrier"},{"p":"m2cci.zw","l":"Format"},{"p":"m2cci.zw","l":"Lettre"},{"p":"m2cci.zw","l":"MachineAffranchir"},{"p":"m2cci.zw","l":"ModeExped"},{"p":"m2cci.zw","l":"Publicite"}];updateSearchResults();
