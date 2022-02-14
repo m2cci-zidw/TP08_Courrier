@@ -3,6 +3,7 @@ package m2cci.zw;
 public class Colis extends Courrier {
     private double volume;
     private double montant;
+    public static final double DEFAULT_VOLUME = 50.0;
 
     /**
      * Constructeur
@@ -22,7 +23,7 @@ public class Colis extends Courrier {
      * 
      * @return montant le montant d'affranchissement d'un colis
      */
-    public double AffranchirNormale() {
+    public double affranchirNormale() {
 
         montant = 0.25 * volume + getPoids() / 1000.0;
 
@@ -36,7 +37,7 @@ public class Colis extends Courrier {
      * @return retourne un booleen true ou false
      */
     public boolean estValide() {
-        return (super.estValide() && volume <= 50);
+        return (super.estValide() && volume <= DEFAULT_VOLUME);
     }
 
     /**

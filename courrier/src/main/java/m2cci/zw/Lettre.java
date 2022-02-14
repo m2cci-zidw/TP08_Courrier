@@ -22,7 +22,7 @@ public class Lettre extends Courrier {
      * 
      * @return montant le montant d'affranchissement d'une lettre
      */
-    public double AffranchirNormale() {
+    public double affranchirNormale() {
 
         if (format == Format.A4) {
             montant = 2.5 + 1.0 * getPoids() / 1000;

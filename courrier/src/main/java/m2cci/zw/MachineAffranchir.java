@@ -52,7 +52,7 @@ public class MachineAffranchir {
         double somme = 0.0;
         for (int i = 0; i <index; i++) {
 
-            somme = somme + listeCourriers[i].Affranchir();
+            somme = somme + listeCourriers[i].affranchir();
 
         }
         

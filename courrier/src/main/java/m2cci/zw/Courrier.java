@@ -1,6 +1,6 @@
 package m2cci.zw;
 
-public class Courrier {
+public abstract class Courrier {
     protected double poids;
     public ModeExped modeExpedition;
     protected String adresse;
@@ -26,7 +26,7 @@ public class Courrier {
      * @return signature de la méthode affranchir normale qui permet de calculer
      *         selon le prix, selon le poids, volume.
      */
-    public double AffranchirNormale() {
+    public double affranchirNormale() {
         return 0;
     }
 
@@ -47,8 +47,8 @@ public class Courrier {
      * @return montantTotal le montant total d'affranchissement des courriers
      *         présents dans la machine
      */
-    public double Affranchir() {
-        prix = AffranchirNormale();
+    public double affranchir() {
+        prix = affranchirNormale();
         if (estValide()) {
             if (modeExpedition == ModeExped.express) {
                 prix = prix * 2;
@@ -85,7 +85,7 @@ public class Courrier {
         message = message + "       Poids : " + getPoids() + " grammes \n";
         message = message + "       Express : " + ((modeExpedition == ModeExped.express) ? "oui" : "non") + " \n";
         message = message + "       Destination : " + this.adresse + "\n";
-        message = message +  (estValide()? ("       Prix : " + Affranchir() + " Euro \n") : "");
+        message = message +  (estValide()? ("       Prix : " + affranchir() + " Euro \n") : "");
         return message;
 
     }

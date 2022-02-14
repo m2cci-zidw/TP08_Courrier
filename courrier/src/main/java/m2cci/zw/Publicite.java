@@ -21,7 +21,7 @@ public class Publicite extends Courrier {
      * 
      * @return montant le montant d'affranchissement d'une publicité
      */
-    public double AffranchirNormale() {
+    public double affranchirNormale() {
         montant = (getPoids() / 1000) * 5.0;
         return montant;
     }
